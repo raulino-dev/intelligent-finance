@@ -53,11 +53,11 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
-
-**O que pode melhorar:**
-- [Liste aqui]
-
+- ensinamento sobre investimento
+- respostas corretas
+- perguntas fora do escopo reagiu bem
+- admitiu não ter informação com informações inexistente dentro do assunto
+- consulta de gastos correta
 ---
 
 ## Métricas Avançadas (Opcional)
