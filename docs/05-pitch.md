@@ -2,28 +2,34 @@
 
 > [!TIP]
 > Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
+
+
+# Estrutura do Pitch
+
+| Tempo | Seção | O que falar |
+| ----- | ----- | ----------- |
+| 0:00 - 0:30 | Problema | A dor que você resolve |
+| 0:30 - 1:30 | Solução | Como a Elisa resolve |
+| 1:30 - 2:30 | Demo | Mostre funcionando |
+| 2:30 - 3:00 | Diferencial | Por que é inovador |
+
  
-## Roteiro Sugerido
+## Roteiro da Elisa
 
-### 1. O Problema (30 seg)
-> Qual dor do cliente você resolve?
+### 🎯 Problema (30 seg)
+'62% dos brasileiros não sabem o que é reserva de emergência. Muita gente quer aprender sobre finanças, mas não sabe por onde
+começar - e tem medo de parecer burro perguntando'
 
-[Sua descrição aqui]
+### 💡 Solução (1 min)
+'A Elisa é uma educadora financeira que ensina de forma personalizada. Ela usa seus próprios dados para dar exemplos práticos. Não
+recomenda investimentos - só educa. É como ter um professor particular de finanças disponível 24h.'
 
-### 2. A Solução (1 min)
-> Como seu agente resolve esse problema?
+### 📱 Demo (1 min)
+<img width="1886" height="926" alt="image" src="https://github.com/user-attachments/assets/23c2c038-8242-43ce-b5d6-4321264e9fc8" />
 
-[Sua descrição aqui]
-
-### 3. Demonstração (1 min)
-> Mostre o agente funcionando (pode ser gravação de tela)
-
-[Descreva o que será mostrado]
-
-### 4. Diferencial e Impacto (30 seg)
-> Por que essa solução é inovadora e qual é o impacto dela na sociedade?
-
-[Sua descrição aqui]
+### ✨ Diferencial (30 seg)
+'Diferente de chatbots genéricos, a Elisa usa SEUS dados como exemplo. Isso toma o aprendizado concreto. E o melhor: roda 100% local,
+sem custo e sem enviar dados para ninguém.'
 
 ---
 
