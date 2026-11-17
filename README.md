@@ -1,149 +1,91 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 💰 Elisa — Educadora Financeira com IA Generativa
 
-## Contexto
+Agente conversacional que ensina finanças pessoais de forma simples, usando os **dados do próprio cliente** como exemplo prático. A Elisa **educa, não aconselha**: explica como cada conceito funciona, mas nunca recomenda onde investir.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+<img width="1912" height="939" alt="Elisa em execução" src="https://github.com/user-attachments/assets/2f2897d0-4cc8-416e-a711-bf0ead1e42c2" />
 
 ---
 
-## O Que Você Deve Entregar
+## O problema
 
-### 1. Documentação do Agente
+Muita gente quer aprender sobre finanças (reserva de emergência, tipos de investimento, organização de gastos), mas não sabe por onde começar e tem receio de perguntar.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+## A solução
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+Uma "professora particular" disponível 24h, com linguagem acessível e exemplos baseados nas transações, no perfil e nas metas do cliente.
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+| | |
+|---|---|
+| **Persona** | Elisa, educadora paciente, informal e que nunca julga os gastos |
+| **Público** | Iniciantes em finanças pessoais |
+| **Respostas** | Curtas (máx. 3 parágrafos) e sempre confirmando se o cliente entendeu |
 
 ---
 
-### 3. Prompts do Agente
+## Segurança e anti-alucinação
 
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+- Responde **apenas** com base nos dados fornecidos no contexto
+- **Não recomenda** investimentos nem incentiva começar a investir
+- Recusa perguntas fora do tema de finanças pessoais
+- Admite quando não sabe: *"Não tenho essa informação, mas posso explicar..."*
+- Não acessa senhas nem dados de outros clientes
 
 ---
 
-### 4. Aplicação Funcional
+## Como funciona
 
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
+```mermaid
+flowchart LR
+    A[Cliente] --> B[Streamlit]
+    B --> C[System Prompt + Contexto]
+    D[(data/)] --> C
+    C --> E[LLM via OpenRouter]
+    E --> B
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+
+Ao iniciar, a aplicação carrega os arquivos de `data/` (perfil, transações, histórico de atendimento e produtos) e os injeta no *system prompt* junto com as regras da Elisa. O histórico da conversa é mantido na sessão.
+
+**Stack:** Python · Streamlit · OpenRouter (`openai/gpt-4o-mini`) · Pandas
+
+---
+
+## Como rodar
+
+```bash
+git clone https://github.com/raulino-dev/intelligent-finance.git
+cd intelligent-finance
+
+pip install streamlit requests pandas python-dotenv
+
+# crie um arquivo .env na raiz com sua chave
+echo "OPENROUTER_API_KEY=sua_chave_aqui" > .env
+
+# rode a partir da raiz (os caminhos de data/ são relativos)
+streamlit run src/app.py
 ```
 
 ---
 
-## Dicas Finais
+## Estrutura
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+```
+├── data/    # Dados mockados (cliente fictício "João Silva")
+├── docs/    # Documentação do agente
+│   ├── 01-documentacao-agente.md   # Caso de uso, persona e arquitetura
+│   ├── 02-base-conhecimento.md     # Estratégia de dados
+│   ├── 03-prompts.md               # System prompt, exemplos e edge cases
+│   ├── 04-metricas.md              # Cenários de teste e resultados
+│   └── 05-pitch.md                 # Roteiro do pitch
+├── src/     # Aplicação (app.py)
+└── assets/  # Recursos visuais
+```
+
+---
+
+## Avaliação
+
+Testada em quatro cenários: **consulta de gastos**, **recomendação de investimento**, **pergunta fora do escopo** e **informação inexistente**. A Elisa respondeu corretamente com base nos dados, recusou o que está fora do tema e admitiu quando não tinha a informação. Detalhes em [`docs/04-metricas.md`](./docs/04-metricas.md).
+
+---
+
+> Projeto educacional com dados fictícios. A Elisa não substitui um profissional certificado.
